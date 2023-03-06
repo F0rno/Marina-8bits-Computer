@@ -1,0 +1,6 @@
+1. La secuencia comienza con la unidad de control recuperando la próxima instrucción de la memoria. La dirección de memoria de la siguiente instrucción se almacena en un registro especial llamado Program Counter (PC).
+2. La unidad de control decodifica la instrucción para determinar qué operación debe realizar el procesador. Por ejemplo, la instrucción podría ser una operación aritmética, una operación lógica o una instrucción de salto.
+3. Dependiendo de la instrucción, la unidad de control puede necesitar recuperar datos adicionales de la memoria o de los registros para completar la operación. Por ejemplo, si la instrucción es una operación aritmética, la unidad de control necesitará recuperar los operandos de los registros de memoria.
+4. La ALU realiza la operación requerida por la instrucción. Los resultados se almacenan temporalmente en un registro de salida.
+5. La unidad de control determina qué hacer con el resultado. Por ejemplo, si la instrucción es una operación de almacenamiento, la unidad de control almacenará el resultado en la memoria. Si la instrucción es un salto, la unidad de control modificará el valor del Program Counter para saltar a una nueva ubicación de memoria.
+7. La secuencia se repite para la siguiente instrucción en la memoria, y así sucesivamente hasta que el programa completo se haya ejecutado.
