@@ -1,6 +1,6 @@
 # ¿Cómo hacer un procesador de 8 bits?
 
-### 05-03-2023 Día 1:
+## 05-03-2023 Día 1:
 
 Busco información en general para darme contexto de mi objetivo.
 
@@ -15,3 +15,14 @@ Procesadores de referencia
 * [https://github.com/leonicolas/computer-8bits](https://github.com/leonicolas/computer-8bits)
 
 Preguntando a ChatGPT sobre cual es la secuenciea que sigue el procesador a dicho [respuesta](examples/cycle.md)
+
+## 06-03-2023 Día 2:
+
+Estoy atascado, he mirado otros procesadores y ya tengo un entendimiento sobre la parte fisica como para empezar a plantear el mio, sin embargo no tengo idea alguna de cual es su funcíonamiento logico a la hora de ejecutar las instrucciones de la memoria.
+
+Empezare por entender control matrix:
+
+* La Control Matrix es una técnica utilizada en el diseño y desarrollo de sistemas electrónicos digitales, que se utiliza para coordinar y controlar el flujo de señales en el sistema.
+* En esencia, la Control Matrix es una tabla que describe cómo las diferentes señales en el sistema interactúan entre sí y cómo se coordinan para producir los resultados deseados. La Control Matrix describe las entradas, salidas y señales internas del sistema, y cómo se combinan para realizar operaciones específicas.
+
+Esa es la difinicon de ChatGPT, pero eso no importa, al buscar informacion acerca del "control matrix" me ha llevado de nuevo al canal de [Ben Eater](https://www.youtube.com/@BenEater), con la diferencia de que ahora me he fijado mejor en una serie de [videos](https://www.youtube.com/watch?v=dXdoim96v5A&list=PLowKtXNTBypGqImE405J2565dvjafglHU&index=37) que explican justamente lo que me habia dejado atascado, olé.
