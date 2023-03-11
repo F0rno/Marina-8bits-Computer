@@ -26,3 +26,15 @@ Empezare por entender control matrix:
 * En esencia, la Control Matrix es una tabla que describe cómo las diferentes señales en el sistema interactúan entre sí y cómo se coordinan para producir los resultados deseados. La Control Matrix describe las entradas, salidas y señales internas del sistema, y cómo se combinan para realizar operaciones específicas.
 
 Esa es la difinicon de ChatGPT, pero eso no importa, al buscar informacion acerca del "control matrix" me ha llevado de nuevo al canal de [Ben Eater](https://www.youtube.com/@BenEater), con la diferencia de que ahora me he fijado mejor en una serie de [videos](https://www.youtube.com/watch?v=dXdoim96v5A&list=PLowKtXNTBypGqImE405J2565dvjafglHU&index=37) que explican justamente lo que me habia dejado atascado, olé.
+
+## 10-03-2023 Día 3:
+
+Estoy trasteando un poco con los componentes (j-k flip flop) para crear mis propios registros de 8bits
+
+## 11-03-2023 Día 4:
+
+Al final sustitui los j-k por registers (que se puende utilizar más de 1 bit). He tenido problemas para editar la apariencia de mis circutitos custom, pero como no era que habia que habilitar que se vieran de la manera personalizada y no de la default.
+
+Ya tengo una primera versión de los registros, ahora voy ha hacer la alu.
+
+Termina la alu solo le falta cambiar la apariencia del circuito.
