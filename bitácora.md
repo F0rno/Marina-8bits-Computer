@@ -38,3 +38,9 @@ Al final sustitui los j-k por registers (que se puende utilizar más de 1 bit). 
 Ya tengo una primera versión de los registros, ahora voy ha hacer la alu.
 
 Termina la alu solo le falta cambiar la apariencia del circuito.
+
+## 12-03-2023 Día 5:
+
+Hoy he terminado el aspector custom de la ALU y he mejorador los registros personalizandolos por separado (A-B) para que se adapten mejor a la arquitectura que quiero.
+
+He tenido que hacer un rediseño porque no sabia que los registros tenian que poder poner lo que tenian en el bus.
