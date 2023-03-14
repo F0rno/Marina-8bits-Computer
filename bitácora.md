@@ -44,3 +44,7 @@ Termina la alu solo le falta cambiar la apariencia del circuito.
 Hoy he terminado el aspector custom de la ALU y he mejorador los registros personalizandolos por separado (A-B) para que se adapten mejor a la arquitectura que quiero.
 
 He tenido que hacer un rediseño porque no sabia que los registros tenian que poder poner lo que tenian en el bus.
+
+## 13-03-2023 Dia 6:
+
+He añadido la RAM más el registro MAR, lo he probado y funciona correctamente
