@@ -52,3 +52,7 @@ He añadido la RAM más el registro MAR, lo he probado y funciona correctamente
 ## 14-03-2023 Día 7:
 
 He añadido el contador de programa (PC), lo he probado y puede contar, recivir una dirección en cualquier momento y puedo enviarlo al bus.
+
+## 18-03-2023 Día 8:
+
+Hoy solo he añadido el registro de salida.
