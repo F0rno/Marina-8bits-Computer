@@ -56,3 +56,7 @@ He añadido el contador de programa (PC), lo he probado y puede contar, recivir 
 ## 18-03-2023 Día 8:
 
 Hoy solo he añadido el registro de salida.
+
+## 19-03-2023 Día 9:
+
+He empezado el decodificador de instrucciones, estoy entendiendo su funcionamiento y sin duda alguna es la parte más compleja.
