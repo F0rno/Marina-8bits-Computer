@@ -60,3 +60,7 @@ Hoy solo he añadido el registro de salida.
 ## 19-03-2023 Día 9:
 
 He empezado el decodificador de instrucciones, estoy entendiendo su funcionamiento y sin duda alguna es la parte más compleja.
+
+## 20-03-2023 Día 10:
+
+Añadido del registro de instrucciones, más las conexiones de los diferentes componentes para el futuro decodificador de instrucciones.
