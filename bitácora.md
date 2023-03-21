@@ -64,3 +64,20 @@ He empezado el decodificador de instrucciones, estoy entendiendo su funcionamien
 ## 20-03-2023 Día 10:
 
 Añadido del registro de instrucciones, más las conexiones de los diferentes componentes para el futuro decodificador de instrucciones.
+
+## 21-03-2023 Día 11:
+
+Hoy sigo con el decodificador de instrucciones, pero por el camino he tenido que cambiar el MAR porque no habia entendido bien como decodificaba los 4bits de dirección, por lo demas pruebas manuales para ver que todo funviona bien. Siguiendo con las mejoras he hecho que los led de información sean más rapidos de con sultar cambiandolos de color, he visto que tenia componente que cogian más bits de los que necesitaban como el MAR y el PC. Junto con un apaño (añadido de una OR al su entrada de reloj) de la RAM ya que esta no funcionaba igual que la de Ben Eater y consumia una instrucción de más.
+
+Cambios importantes en los registros A y B, los outputs que alimentan a la ALU, estaban al reves 🤬.
+He conseguido ejecutar el primer programa (manualmente (sin DI)) del procesador óle.
+
+```
+LDA 14
+ADD 15
+OUT
+```
+
+Tanto 14 como 15 son direciones de memoria.
+
+He terminado la plantilla de execl para definir mis instrucciones y sus micro-códigos. Día productivo.
