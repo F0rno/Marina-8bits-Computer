@@ -33,7 +33,7 @@ Estoy trasteando un poco con los componentes (j-k flip flop) para crear mis prop
 
 ## 11-03-2023 Día 4:
 
-Al final sustitui los j-k por registers (que se puende utilizar más de 1 bit). He tenido problemas para editar la apariencia de mis circutitos custom, pero como no era que habia que habilitar que se vieran de la manera personalizada y no de la default.
+Al final sustitui los j-k por registers (que se puende utilizar más de 1 bit). He tenido problemas para editar la apariencia de mis circutitos custom, pero como no... era que habia que habilitar que se vieran de la manera personalizada y no de la default 🥴.
 
 Ya tengo una primera versión de los registros, ahora voy ha hacer la alu.
 
@@ -67,10 +67,10 @@ Añadido del registro de instrucciones, más las conexiones de los diferentes co
 
 ## 21-03-2023 Día 11:
 
-Hoy sigo con el decodificador de instrucciones, pero por el camino he tenido que cambiar el MAR porque no habia entendido bien como decodificaba los 4bits de dirección, por lo demas pruebas manuales para ver que todo funviona bien. Siguiendo con las mejoras he hecho que los led de información sean más rapidos de con sultar cambiandolos de color, he visto que tenia componente que cogian más bits de los que necesitaban como el MAR y el PC. Junto con un apaño (añadido de una OR al su entrada de reloj) de la RAM ya que esta no funcionaba igual que la de Ben Eater y consumia una instrucción de más.
+Hoy sigo con el decodificador de instrucciones, pero por el camino he tenido que cambiar el MAR porque no habia entendido bien como decodificaba los 4bits de dirección, por lo demas, pruebas manuales para ver que todo funviona bien. Siguiendo con las mejoras he hecho que los LEDs de información sean más rapidos de con sultar cambiandolos de color, he visto que tenia un componente que cogia más bits de los que necesitaba como el MAR y el PC. Junto con un apaño (añadido de una OR al su entrada de reloj) de la RAM ya que esta no funcionaba igual que la de Ben Eater y consumia una instrucción de más.
 
 Cambios importantes en los registros A y B, los outputs que alimentan a la ALU, estaban al reves 🤬.
-He conseguido ejecutar el primer programa (manualmente (sin DI)) del procesador óle.
+He conseguido ejecutar el primer programa (manualmente (sin ID)) del procesador olé.
 
 ```
 LDA 14
@@ -81,3 +81,9 @@ OUT
 Tanto 14 como 15 son direciones de memoria.
 
 He terminado la plantilla de execl para definir mis instrucciones y sus micro-códigos. Día productivo.
+
+## 23-03-2023 Día 12:
+
+Hoy le he dado forma al decodificador de instrucciones y conectado al mismo. Tambien he conectado todos los componentes mediante "tuneles" y le ha dado un aspecto mucho más limpio.
+
+Siguiendo con el desarrollo del decodificador de instrucciones he creado un execl con unas instrucciones basicas para utilizarlas de referencia. Tengo que comprobar que estan bien y hacer un script para generar la ROM
