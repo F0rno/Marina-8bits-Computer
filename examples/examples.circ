@@ -1536,7 +1536,7 @@
       <a name="addrWidth" val="9"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="contents">addr/data: 9 17
-4020 800c
+0
 </a>
       <a name="dataWidth" val="17"/>
     </comp>

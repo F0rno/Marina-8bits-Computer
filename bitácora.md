@@ -87,3 +87,7 @@ He terminado la plantilla de execl para definir mis instrucciones y sus micro-c�
 Hoy le he dado forma al decodificador de instrucciones y conectado al mismo. Tambien he conectado todos los componentes mediante "tuneles" y le ha dado un aspecto mucho más limpio.
 
 Siguiendo con el desarrollo del decodificador de instrucciones he creado un execl con unas instrucciones basicas para utilizarlas de referencia. Tengo que comprobar que estan bien y hacer un script para generar la ROM
+
+## 24-03-2023 Día 13:
+
+Hoy he empezado con la generación de la ROM y he hecho muchos progresos: generar una ROM valida vacia, generar las posibles direcciones de las instrucciones segun su step, flags, número.
