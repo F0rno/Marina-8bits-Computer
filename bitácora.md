@@ -91,3 +91,11 @@ Siguiendo con el desarrollo del decodificador de instrucciones he creado un exec
 ## 24-03-2023 Día 13:
 
 Hoy he empezado con la generación de la ROM y he hecho muchos progresos: generar una ROM valida vacia, generar las posibles direcciones de las instrucciones segun su step, flags, número.
+
+## 25-03-2023 Día 14:
+
+Al final he tenido que crear yo mismo un modulo que trabaja con la ROM, pero ya lo he conseguido, ya puedo generar la rom, leerla, escribirla como yo quiera... uf.
+
+Me he encontrando muchos bugs en el código que genera la ROM, muchos bugs en el circuito real, problemas con los micro códigos de las instrucciones. He estado todo el día con encontrandome un problema tras otro... PERO AL FINAL LO HE CONSEGUIDO, HE LOGRADO EJECUTAR EL PROGRAMA DE SUMA BASICA   OLEEEEEEEEEEEEEEEE JODEEEEEEEEEEEEEEEEEEEEEEEEER.
+
+He empezado a pasar los circuitos en sucio a un nuevo proyecto en limpio, tambien he decidio el nombre del procesador, Marina.

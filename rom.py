@@ -1,4 +1,6 @@
 from itertools import product
+from el_limbo.romtools import *
+from rom_class import InstruccionsRom
 
 HL = 0b10000000000000000
 CE = 0b01000000000000000
@@ -21,11 +23,11 @@ OI = 0b00000000000000001
 #HL	CE	CO	JP	AI	AO	EO	SU	BI	BO	FI	MI	RI	RO	II	IO	OI
 
 INSTRUCTIONS_MICRO_CODES = [
-    [CO|MI, CE|RO|II,       0,      0,            0, 0, 0, 0], # 0000 NOP
-    [CO|MI, CE|RO|II,       HL,     0,            0, 0, 0, 0], # 0001 HALT
-    [CO|MI, CE|RO|II, CE|CO|MI, MI|RO, AI|RO,        0, 0, 0], # 0010 LDA [ADDR]
-    [CO|MI, CE|RO|II, CE|CO|MI, MI|RO, BI|RI, AI|EO|FI, 0, 0], # 0011 ADD [ADDR]
-    [CO|MI, CE|RO|II,    AO|OI,     0,     0,        0, 0, 0], # 0100 OUTA
+    [CO|MI, CE|RO|II,     0,     0, 0, 0, 0, 0], # 0000 NOP
+    [CO|MI, CE|RO|II,    HL,     0, 0, 0, 0, 0], # 0001 HALT
+    [CO|MI, CE|RO|II, IO|MI, RO|AI, 0, 0, 0, 0], # 0010 LDA [ADDR]
+    [CO|MI, CE|RO|II, IO|MI, RO|BI, EO|AI, 0, 0, 0], # 0011 ADD [ADDR]
+    [CO|MI, CE|RO|II, AO|OI,     0,     0, 0, 0, 0], # 0100 OUTA
     [CO|MI, CE|RO|II, 0, 0, 0, 0, 0, 0], # STA [ADDR]
     [CO|MI, CE|RO|II, 0, 0, 0, 0, 0, 0], # SUB [ADDR]
     [CO|MI, CE|RO|II, 0, 0, 0, 0, 0, 0], # JMP [ADDR]
@@ -36,28 +38,71 @@ INSTRUCTIONS_MICRO_CODES = [
 ]
 
 INSTRUCTIONS_NUMBER = {
-    0b0000:2,
-    0b0001:3,
-    0b0010:5,
-    0b0011:6,
-    0b0100:3
+    0b0000:8,
+    0b0001:8,
+    0b0010:8,
+    0b0011:8,
+    0b0100:8,
+    0b0101:8,
+    0b0110:8,
+    0b0111:8,
+    0b1000:8,
+    0b1001:8,
+    0b1010:8,
+    0b1011:8
 }
 
-# Función para convertir un número decimal a binario
-def decimal_to_binario(decimal):
-    return bin(decimal)[2:].zfill(4)  # Elimina el prefijo "0b" que indica que es binario
+CODES_FOR_ROM = {}
 
-INSTRUCTIONS_ADDR = []
+def decimal_to_binary(decimal):
+    return bin(decimal)[2:].zfill(3)
 
-# steps zf cf instruc_addr
-for addr in INSTRUCTIONS_NUMBER:
-    for flags_combination in product(["0", "1"], repeat=2):
-        for step in range(0, INSTRUCTIONS_NUMBER[addr]+1):
-            binary_step = decimal_to_binario(step)
-            binary_addr = bin(addr).replace("0b", "").zfill(4)
-            rom_addr = f"{binary_step}{''.join(flags_combination)}{binary_addr}"
-            INSTRUCTIONS_ADDR.append(hex(int(rom_addr)))
+def generate_addr_instruccions_codes():
+    # steps zf cf instruc_addr
+    return_dic = {}
+    for addr in INSTRUCTIONS_NUMBER:
+        for flags_combination in product(["0", "1"], repeat=2):
+            for step in range(0, INSTRUCTIONS_NUMBER[addr]):
+                binary_step = str(decimal_to_binary(step))
+                binary_addr = bin(addr).replace("0b", "").zfill(4)
+                rom_addr = hex(int(f"{binary_addr}{''.join(flags_combination)}{binary_step}", 2)).replace("0x", "")
+                #rom_addr = f"{binary_addr} {''.join(flags_combination)} {binary_step}"
+                #if binary_addr == bin(0b0001).replace("0b", "").zfill(4):
+                #print(rom_addr, hex(INSTRUCTIONS_MICRO_CODES[int(binary_addr,2)][int(binary_step,2)]).replace("0x", "").zfill(5))
+                return_dic[rom_addr] = hex(INSTRUCTIONS_MICRO_CODES[int(binary_addr,2)][int(binary_step,2)]).replace("0x", "").zfill(5)
+    return return_dic
 
+def generate_my_ROM(instructions):
+    myROM = InstruccionsRom()
+    myROM.generate_empty_ROM()
+    for addr_instruc in instructions:
+        #print(int(addr_instruc, 16), instructions[addr_instruc])
+        myROM.write_ROM_in_addr(int(addr_instruc, 16), instructions[addr_instruc])
+    myROM.save_into_file()
+    return myROM.rom_to_text()
+
+INSTRUCTIONS_ADDR = generate_addr_instruccions_codes()
+
+ROM = generate_my_ROM(INSTRUCTIONS_ADDR)
+
+"""
+for i in instructions:
+    if instructions[i] != "0":
+        print(f"{i} {instructions[i]}")
+·"""
+#ROM = generate_my_ROM(instructions)
+#print(ROM)
+
+"""
+with open("mi_rom", "wb") as f:
+    f.write("v3.0 hex words addressed\n".encode("utf-8"))
+    for addr in range(0, 0x1f8+1, 8):
+        addr = hex(addr).replace("0x", "")
+        formatedAddr = "0"*(3-len(addr))+addr
+        f.write(f"{formatedAddr}: 00000 00000 00000 00000 00000 00000 00000 00000\n".encode("utf-8"))
+"""
+
+"""
 def read_ROM():
     with open("mi_rom", "r") as f:
         lines = f.readlines()[1:]
@@ -73,14 +118,14 @@ def write_ROM_in_addr(tarjet_addr, data):
                 line[index] = data
             addr_counter += 1
     print()
-
+"""
+"""
 write_ROM_in_addr(0x3, 11111)
 
 # Write 11111, in address 3
 #000: 00000 00000 11111 00000 00000 00000 00000 00000
 #008: 00000 00000 00000 00000 00000 00000 00000 00000
-
-
+"""
 """
 for addr in range(0, 0x1f8+1, 8):
     addr = hex(addr)
@@ -88,18 +133,7 @@ for addr in range(0, 0x1f8+1, 8):
 
 """
 """
-for microCodes in INSTRUCTIONS_MICRO_CODES:
-    for microCode in microCodes:
-        print(hex(microCode))
-    print("#")
-"""
-"""
-with open("mi_rom", "wb") as f:
-    f.write("v3.0 hex words addressed\n".encode("utf-8"))
-    for addr in range(0, 0x1f8+1, 8):
-        addr = hex(addr).replace("0x", "")
-        formatedAddr = "0"*(3-len(addr))+addr
-        f.write(f"{formatedAddr}: 00000 00000 00000 00000 00000 00000 00000 00000\n".encode("utf-8"))
+
 """
 """
 print("v3.0 hex words addressed")
