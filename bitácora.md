@@ -98,4 +98,12 @@ Al final he tenido que crear yo mismo un modulo que trabaja con la ROM, pero ya 
 
 Me he encontrando muchos bugs en el código que genera la ROM, muchos bugs en el circuito real, problemas con los micro códigos de las instrucciones. He estado todo el día con encontrandome un problema tras otro... PERO AL FINAL LO HE CONSEGUIDO, HE LOGRADO EJECUTAR EL PROGRAMA DE SUMA BASICA   OLEEEEEEEEEEEEEEEE JODEEEEEEEEEEEEEEEEEEEEEEEEER.
 
-He empezado a pasar los circuitos en sucio a un nuevo proyecto en limpio, tambien he decidio el nombre del procesador, Marina.
+He empezado a pasar los circuitos en sucio a un nuevo proyecto en limpio, tambien he decidio el nombre del ordenador, Marina.
+
+## 26-03-2023 Día 15:
+
+Hoy he terminado de pasar los circuitos a limpio en un proyecto nuevo y tambien le he dado a Marina la complejidad de Turing al añadir los saltos condicionales. Ahora Marina no solo puede actuar en base a lo que lee en su memoria, si no que tambien a las condicionales que nosotros queramos.
+
+Tambien me he tirado 1 hora rallado por un problema con las direcciones de memoria, el cual era que las habia escrito mal en el papel...🙂.
+
+Ahora lo que queda es hacer el display decimal para el registro de salida, documentar y subirlo al repo.

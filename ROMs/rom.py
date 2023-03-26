@@ -1,4 +1,4 @@
-class InstruccionsRom:
+class ROM:
     def __init__(self):
         self.tittle = "v3.0 hex words addressed\n"
         self.ROM = {}

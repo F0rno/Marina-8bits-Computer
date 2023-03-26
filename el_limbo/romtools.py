@@ -109,3 +109,42 @@ ROM = write_ROM_in_addr(ROM, 511, "11111")
 ROM = write_ROM_in_addr(ROM, 0, "11111")
 print(ROM)
 """
+
+
+"""
+def read_ROM():
+    with open("mi_rom", "r") as f:
+        lines = f.readlines()[1:]
+    return lines
+
+def write_ROM_in_addr(tarjet_addr, data):
+    addr_counter = 0
+    rom_content = read_ROM()
+    for line in rom_content:
+        for index, addres in enumerate(line.split(" ")[1:]):
+            #print(addr_counter)
+            if addr_counter == tarjet_addr:
+                line[index] = data
+            addr_counter += 1
+    print()
+"""
+"""
+write_ROM_in_addr(0x3, 11111)
+
+# Write 11111, in address 3
+#000: 00000 00000 11111 00000 00000 00000 00000 00000
+#008: 00000 00000 00000 00000 00000 00000 00000 00000
+"""
+"""
+for addr in range(0, 0x1f8+1, 8):
+    addr = hex(addr)
+    formatedAddr = "0"*(3-len(addr.replace("0x", "")))+addr.replace("0x", "")
+
+"""
+"""
+print("v3.0 hex words addressed")
+for addr in range(0, 0x1f8+1, 8):
+    addr = hex(addr).replace("0x", "")
+    formatedAddr = "0"*(3-len(addr))+addr
+    print(f"{formatedAddr}: 00000 00000 00000 00000 00000 00000 00000 00000")
+"""

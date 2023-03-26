@@ -74,7 +74,7 @@
     <a name="circuit" val="registro_8bits_test"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="clabelup" val="south"/>
-    <a name="simulationFrequency" val="32.0"/>
+    <a name="simulationFrequency" val="4.0"/>
     <comp lib="0" loc="(1030,440)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="south"/>
@@ -1600,7 +1600,6 @@
       <a name="labelfont" val="SansSerif bold 10"/>
       <a name="output" val="true"/>
     </comp>
-    <comp lib="0" loc="(90,470)" name="Clock"/>
     <comp lib="1" loc="(1230,200)" name="NOT Gate"/>
     <comp lib="1" loc="(1310,1030)" name="Controlled Buffer"/>
     <comp lib="1" loc="(1310,320)" name="Controlled Buffer"/>
@@ -1619,7 +1618,6 @@
     <comp lib="1" loc="(1310,920)" name="Controlled Buffer"/>
     <comp lib="1" loc="(1310,950)" name="Controlled Buffer"/>
     <comp lib="1" loc="(1310,980)" name="Controlled Buffer"/>
-    <comp lib="1" loc="(150,470)" name="NOT Gate"/>
     <comp lib="1" loc="(260,500)" name="OR Gate">
       <a name="facing" val="north"/>
     </comp>
@@ -1846,7 +1844,6 @@
     <wire from="(690,690)" to="(690,740)"/>
     <wire from="(710,700)" to="(710,740)"/>
     <wire from="(730,710)" to="(730,740)"/>
-    <wire from="(90,470)" to="(120,470)"/>
     <wire from="(950,300)" to="(1050,300)"/>
   </circuit>
   <circuit name="bus_and_rgisters">
