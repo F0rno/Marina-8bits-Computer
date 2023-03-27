@@ -67,35 +67,38 @@ CODES_FOR_ROM = {}
 def decimal_to_binary(decimal):
     return bin(decimal)[2:].zfill(3)
 
+def hexFormat(number):
+    return hex(number).replace("0x", "").zfill(5)
+
 def generate_addr_instruccions_codes():
-    # steps zf cf instruc_addr
-    return_dic = {}
+    addr_instructions = {}
     for addr in INSTRUCTIONS_NUMBER:
         for flags_combination in product(["0", "1"], repeat=2):
             for step in range(0, INSTRUCTIONS_NUMBER[addr]):
                 binary_step = str(decimal_to_binary(step))
                 binary_addr = bin(addr).replace("0b", "").zfill(4)
-                rom_addr = hex(int(f"{binary_addr}{''.join(flags_combination)}{binary_step}", 2)).replace("0x", "")
+                rom_addr = hexFormat(int(f"{binary_addr}{''.join(flags_combination)}{binary_step}", 2))
+                # Depending on the value of the flags we change the microcodes of the instruction to make the jump
                 if FLAG_JC == binary_addr and step == 2 and flags_combination[0] == "1":
-                    instruction_hex_code = hex(JP|IO).replace("0x", "").zfill(5)
-                    return_dic[rom_addr] = instruction_hex_code
+                    instruction_hex_code = hexFormat(JP|IO)
+                    addr_instructions[rom_addr] = instruction_hex_code
                 elif FLAG_JZ == binary_addr and step == 2 and flags_combination[1] == "1":
-                    instruction_hex_code = hex(JP|IO).replace("0x", "").zfill(5)
-                    return_dic[rom_addr] = instruction_hex_code
+                    instruction_hex_code = hexFormat(JP|IO)
+                    addr_instructions[rom_addr] = instruction_hex_code
                 else:
-                    instruction_hex_code = hex(INSTRUCTIONS_MICRO_CODES[int(binary_addr,2)][int(binary_step,2)]).replace("0x", "").zfill(5)
-                    return_dic[rom_addr] = instruction_hex_code
-    return return_dic
+                    instruction_hex_code = hexFormat(INSTRUCTIONS_MICRO_CODES[int(binary_addr,2)][int(binary_step,2)])
+                    addr_instructions[rom_addr] = instruction_hex_code
+    return addr_instructions
 
 def generate_my_ROM(instructions):
     myROM = ROM()
-    myROM.generate_empty_ROM()
+    myROM.init_empty_ROM()
     for addr_instruc in instructions:
-        myROM.write_ROM_in_addr(int(addr_instruc, 16), instructions[addr_instruc])
+        myROM.in_ROM_addr_write(int(addr_instruc, 16), instructions[addr_instruc])
     myROM.save_into_file()
     return myROM.rom_to_text()
 
-ADDRS_INSTRUCTIONS = generate_addr_instruccions_codes()
-
-ROM = generate_my_ROM(ADDRS_INSTRUCTIONS)
-print(ROM)
+if __name__ == "__main__":
+    ADDRS_INSTRUCTIONS = generate_addr_instruccions_codes()
+    ROM = generate_my_ROM(ADDRS_INSTRUCTIONS)
+    print(ROM)

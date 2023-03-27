@@ -107,3 +107,9 @@ Hoy he terminado de pasar los circuitos a limpio en un proyecto nuevo y tambien 
 Tambien me he tirado 1 hora rallado por un problema con las direcciones de memoria, el cual era que las habia escrito mal en el papel...🙂.
 
 Ahora lo que queda es hacer el display decimal para el registro de salida, documentar y subirlo al repo.
+
+## 27-03-2023 Día 16:
+
+Hoy he terminado el generador de ROM para el decodificador de 8bits a un display de 7 segmentos, más el circuito para el display. Ahora el registro de salida muestra la salida en decimal.
+
+He cambiado el diseño del circuito principal de Marina, ahora el registro de salida esta arriba, junto con los pines de programación manual y los pines manuales del bus. Para separar la parte de "usuario" de la parte que no requiere la interacción directa.
