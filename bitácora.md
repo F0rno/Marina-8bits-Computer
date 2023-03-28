@@ -1,4 +1,4 @@
-# ¿Cómo hacer un procesador de 8 bits?
+# Cómo hacer un procesador de 8 bits?
 
 ## 05-03-2023 Día 1:
 
@@ -113,3 +113,9 @@ Ahora lo que queda es hacer el display decimal para el registro de salida, docum
 Hoy he terminado el generador de ROM para el decodificador de 8bits a un display de 7 segmentos, más el circuito para el display. Ahora el registro de salida muestra la salida en decimal.
 
 He cambiado el diseño del circuito principal de Marina, ahora el registro de salida esta arriba, junto con los pines de programación manual y los pines manuales del bus. Para separar la parte de "usuario" de la parte que no requiere la interacción directa.
+
+## 28-03-2023 Día 17:
+
+Hoy he empezado la documentación de Marina, junto con el compilador. La documentación es bastante exigente  porque estoy tocando mucho la máquina de Turing, pero me esta ayudando a mi propio entendimiento. El compilador no esta siendo muy complicado, pero todabia no lo he acabado así que me callo.
+
+He añadido un marco de cables para el label del nombre y a quedado de locos.
