@@ -43,7 +43,6 @@ Termina la alu solo le falta cambiar la apariencia del circuito.
 
 Hoy he terminado el aspecto custom de la ALU y he mejorador los registros personalizándolos por separado (A-B) para que se adapten mejor a la arquitectura que quiero.
 
-
 He tenido que hacer un rediseño porque no sabía que los registros tenían que poder poner lo que tenían en el bus.
 
 ## 13-03-2023 Dia 6:
@@ -124,3 +123,7 @@ He añadido un marco de cables para el label del nombre y ha quedado de locos.
 ## 29-03-2023 Día 18:
 
 He terminado el compilador, no es muy cómodo de usar, pero el proyecto se está alargando demasiado.
+
+## 30-03-2023 Día 19:
+
+Proyecto terminado
