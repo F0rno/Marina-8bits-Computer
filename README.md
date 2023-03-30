@@ -1,6 +1,6 @@
 # Marina
 
-![](assets/imgs/components/Marina-full.png)
+![](assets/imgs/components/marina-full.png)
 
 Este proyecto trata sobre como crear un [ordenador](https://es.wikipedia.org/wiki/Computadora) de 8bits, que cumpla los requisitos de una [máquina de Turing](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing):
 
