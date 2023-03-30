@@ -14,18 +14,18 @@ Procesadores de referencia
 * [https://github.com/eddiewastaken/logisim-discrete-CPU](https://github.com/eddiewastaken/logisim-discrete-CPU)
 * [https://github.com/leonicolas/computer-8bits](https://github.com/leonicolas/computer-8bits)
 
-Preguntando a ChatGPT sobre cual es la secuenciea que sigue el procesador a dicho [respuesta](examples/cycle.md)
+Preguntando a ChatGPT sobre cuál es la secuencia que sigue el procesador ha dicho [respuesta](examples/cycle.md)
 
 ## 06-03-2023 Día 2:
 
-Estoy atascado, he mirado otros procesadores y ya tengo un entendimiento sobre la parte fisica como para empezar a plantear el mio, sin embargo no tengo idea alguna de cual es su funcíonamiento logico a la hora de ejecutar las instrucciones de la memoria.
+Estoy atascado, he mirado otros procesadores y ya tengo un entendimiento sobre la parte física como para empezar a plantear el mío, sin embargo, no tengo idea alguna de cuál es su funcionamiento lógico a la hora de ejecutar las instrucciones de la memoria.
 
-Empezare por entender control matrix:
+Empezaré por entender control Matrix:
 
-* La Control Matrix es una técnica utilizada en el diseño y desarrollo de sistemas electrónicos digitales, que se utiliza para coordinar y controlar el flujo de señales en el sistema.
-* En esencia, la Control Matrix es una tabla que describe cómo las diferentes señales en el sistema interactúan entre sí y cómo se coordinan para producir los resultados deseados. La Control Matrix describe las entradas, salidas y señales internas del sistema, y cómo se combinan para realizar operaciones específicas.
+* El Control Matrix es una técnica utilizada en el diseño y desarrollo de sistemas electrónicos digitales, que se utiliza para coordinar y controlar el flujo de señales en el sistema.
+* En esencia, el Control Matrix es una tabla que describe cómo las diferentes señales en el sistema interactúan entre sí y cómo se coordinan para producir los resultados deseados. El Control Matrix describe las entradas, salidas y señales internas del sistema, y cómo se combinan para realizar operaciones específicas.
 
-Esa es la difinicon de ChatGPT, pero eso no importa, al buscar informacion acerca del "control matrix" me ha llevado de nuevo al canal de [Ben Eater](https://www.youtube.com/@BenEater), con la diferencia de que ahora me he fijado mejor en una serie de [videos](https://www.youtube.com/watch?v=dXdoim96v5A&list=PLowKtXNTBypGqImE405J2565dvjafglHU&index=37) que explican justamente lo que me habia dejado atascado, olé.
+Esa es la definición de ChatGPT, pero eso no importa, al buscar información acerca del “control Matrix” me ha llevado de nuevo al canal de [Ben Eater](https://www.youtube.com/@BenEater), con la diferencia de que ahora me he fijado mejor en una serie de [videos](https://www.youtube.com/watch?v=dXdoim96v5A&list=PLowKtXNTBypGqImE405J2565dvjafglHU&index=37) que explican justamente lo que me habría dejado atascado, olé.
 
 ## 10-03-2023 Día 3:
 
@@ -33,17 +33,18 @@ Estoy trasteando un poco con los componentes (j-k flip flop) para crear mis prop
 
 ## 11-03-2023 Día 4:
 
-Al final sustitui los j-k por registers (que se puende utilizar más de 1 bit). He tenido problemas para editar la apariencia de mis circutitos custom, pero como no... era que habia que habilitar que se vieran de la manera personalizada y no de la default 🥴.
+Al final sustituí los j-k por registers (que se puede utilizar más de 1 bit). He tenido problemas para editar la apariencia de mis circuitos custom, pero como no... era que había que habilitar que se vieran de la manera personalizada y no de la default 🥴.
 
-Ya tengo una primera versión de los registros, ahora voy ha hacer la alu.
+Ya tengo una primera versión de los registros, ahora voy a hacer la alu.
 
 Termina la alu solo le falta cambiar la apariencia del circuito.
 
 ## 12-03-2023 Día 5:
 
-Hoy he terminado el aspector custom de la ALU y he mejorador los registros personalizandolos por separado (A-B) para que se adapten mejor a la arquitectura que quiero.
+Hoy he terminado el aspecto custom de la ALU y he mejorador los registros personalizándolos por separado (A-B) para que se adapten mejor a la arquitectura que quiero.
 
-He tenido que hacer un rediseño porque no sabia que los registros tenian que poder poner lo que tenian en el bus.
+
+He tenido que hacer un rediseño porque no sabía que los registros tenían que poder poner lo que tenían en el bus.
 
 ## 13-03-2023 Dia 6:
 
@@ -51,7 +52,7 @@ He añadido la RAM más el registro MAR, lo he probado y funciona correctamente
 
 ## 14-03-2023 Día 7:
 
-He añadido el contador de programa (PC), lo he probado y puede contar, recivir una dirección en cualquier momento y puedo enviarlo al bus.
+He añadido el contador de programa (PC), lo he probado y puede contar, recibir una dirección en cualquier momento y puedo enviarlo al bus.
 
 ## 18-03-2023 Día 8:
 
@@ -67,9 +68,9 @@ Añadido del registro de instrucciones, más las conexiones de los diferentes co
 
 ## 21-03-2023 Día 11:
 
-Hoy sigo con el decodificador de instrucciones, pero por el camino he tenido que cambiar el MAR porque no habia entendido bien como decodificaba los 4bits de dirección, por lo demas, pruebas manuales para ver que todo funviona bien. Siguiendo con las mejoras he hecho que los LEDs de información sean más rapidos de con sultar cambiandolos de color, he visto que tenia un componente que cogia más bits de los que necesitaba como el MAR y el PC. Junto con un apaño (añadido de una OR al su entrada de reloj) de la RAM ya que esta no funcionaba igual que la de Ben Eater y consumia una instrucción de más.
+Hoy sigo con el decodificador de instrucciones, pero por el camino he tenido que cambiar el MAR porque no había entendido bien como decodificaba los 4bits de dirección, por lo demás, pruebas manuales para ver que todo funviona bien. Siguiendo con las mejoras he hecho que los LEDs de información sean más rápidos de consultar cambiándolos de color, he visto que tenía un componente que cogía más bits de los que necesitaba como el MAR y el PC. Junto con un apaño (añadido de una OR al su entrada de reloj) de la RAM, ya que esta no funcionaba igual que la de Ben Eater y consumía una instrucción de más.
 
-Cambios importantes en los registros A y B, los outputs que alimentan a la ALU, estaban al reves 🤬.
+Cambios importantes en los registros A y B, los outputs que alimentan a la ALU, estaban al revés 🤬.
 He conseguido ejecutar el primer programa (manualmente (sin ID)) del procesador olé.
 
 ```
@@ -78,33 +79,33 @@ ADD 15
 OUT
 ```
 
-Tanto 14 como 15 son direciones de memoria.
+Tanto 14 como 15 son direcciones de memoria.
 
-He terminado la plantilla de execl para definir mis instrucciones y sus micro-códigos. Día productivo.
+He terminado la plantilla de Excel para definir mis instrucciones y sus microcódigos. Día productivo.
 
 ## 23-03-2023 Día 12:
 
-Hoy le he dado forma al decodificador de instrucciones y conectado al mismo. Tambien he conectado todos los componentes mediante "tuneles" y le ha dado un aspecto mucho más limpio.
+Hoy le he dado forma al decodificador de instrucciones y conectado al mismo. También he conectado todos los componentes mediante "túneles" y le ha dado un aspecto mucho más limpio.
 
-Siguiendo con el desarrollo del decodificador de instrucciones he creado un execl con unas instrucciones basicas para utilizarlas de referencia. Tengo que comprobar que estan bien y hacer un script para generar la ROM
+Siguiendo con el desarrollo del decodificador de instrucciones, he creado un Excel con unas instrucciones básicas para utilizarlas de referencia. Tengo que comprobar que están bien y hacer un script para generar la ROM
 
 ## 24-03-2023 Día 13:
 
-Hoy he empezado con la generación de la ROM y he hecho muchos progresos: generar una ROM valida vacia, generar las posibles direcciones de las instrucciones segun su step, flags, número.
+Hoy he empezado con la generación de la ROM y he hecho muchos progresos: generar una ROM válida vacía, generar las posibles direcciones de las instrucciones, según su step, flags, número.
 
 ## 25-03-2023 Día 14:
 
-Al final he tenido que crear yo mismo un modulo que trabaja con la ROM, pero ya lo he conseguido, ya puedo generar la rom, leerla, escribirla como yo quiera... uf.
+Al final he tenido que crear yo mismo un módulo que trabaja con la ROM, pero ya lo he conseguido, ya puedo generar la ROM, leerla, escribirla como yo quiera… uf.
 
-Me he encontrando muchos bugs en el código que genera la ROM, muchos bugs en el circuito real, problemas con los micro códigos de las instrucciones. He estado todo el día con encontrandome un problema tras otro... PERO AL FINAL LO HE CONSEGUIDO, HE LOGRADO EJECUTAR EL PROGRAMA DE SUMA BASICA   OLEEEEEEEEEEEEEEEE JODEEEEEEEEEEEEEEEEEEEEEEEEER.
+Me he encontrado muchos bugs en el código que genera la ROM, muchos bugs en el circuito real, problemas con los microcódigos de las instrucciones. He estado todo el día con encontrándome un problema tras otro… PERO AL FINAL LO HE CONSEGUIDO, HE LOGRADO EJECUTAR EL PROGRAMA DE SUMA BÁSICA OLEEEEEEEEEEEEEEEE JODEEEEEEEEEEEEEEEEEEEEEEEEER.
 
-He empezado a pasar los circuitos en sucio a un nuevo proyecto en limpio, tambien he decidio el nombre del ordenador, Marina.
+He empezado a pasar los circuitos en sucio a un nuevo proyecto en limpio, también he decidió el nombre del ordenador, Marina.
 
 ## 26-03-2023 Día 15:
 
-Hoy he terminado de pasar los circuitos a limpio en un proyecto nuevo y tambien le he dado a Marina la complejidad de Turing al añadir los saltos condicionales. Ahora Marina no solo puede actuar en base a lo que lee en su memoria, si no que tambien a las condicionales que nosotros queramos.
+Hoy he terminado de pasar los circuitos a limpio en un proyecto nuevo y también le he dado a Marina la complejidad de Turing al añadir los saltos condicionales. Ahora Marina no solo puede actuar con base en lo que lee en su memoria, sino que también a las condicionales que nosotros queramos.
 
-Tambien me he tirado 1 hora rallado por un problema con las direcciones de memoria, el cual era que las habia escrito mal en el papel...🙂.
+También me he tirado 1 hora rallado por un problema con las direcciones de memoria, el cual era que las había escrito mal en el papel…🙂.
 
 Ahora lo que queda es hacer el display decimal para el registro de salida, documentar y subirlo al repo.
 
@@ -112,14 +113,14 @@ Ahora lo que queda es hacer el display decimal para el registro de salida, docum
 
 Hoy he terminado el generador de ROM para el decodificador de 8bits a un display de 7 segmentos, más el circuito para el display. Ahora el registro de salida muestra la salida en decimal.
 
-He cambiado el diseño del circuito principal de Marina, ahora el registro de salida esta arriba, junto con los pines de programación manual y los pines manuales del bus. Para separar la parte de "usuario" de la parte que no requiere la interacción directa.
+He cambiado el diseño del circuito principal de Marina, ahora el registro de salida está arriba, junto con los pines de programación manual y los pines manuales del bus. Para separar la parte de “usuario” de la parte que no requiere la interacción directa.
 
 ## 28-03-2023 Día 17:
 
-Hoy he empezado la documentación de Marina, junto con el compilador. La documentación es bastante exigente  porque estoy tocando mucho la máquina de Turing, pero me esta ayudando a mi propio entendimiento. El compilador no esta siendo muy complicado, pero todabia no lo he acabado así que me callo.
+Hoy he empezado la documentación de Marina, junto con el compilador. La documentación es bastante exigente porque estoy tocando mucho la máquina de Turing, pero me está ayudando a mi propio entendimiento. El compilador no está siendo muy complicado, pero todavía no lo he acabado, así que me callo.
 
-He añadido un marco de cables para el label del nombre y a quedado de locos.
+He añadido un marco de cables para el label del nombre y ha quedado de locos.
 
 ## 29-03-2023 Día 18:
 
-He terminado el compilador, no es muy comodo de usar pero el proyecto se esta alargando demasiado.
+He terminado el compilador, no es muy cómodo de usar, pero el proyecto se está alargando demasiado.
