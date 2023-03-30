@@ -2,7 +2,7 @@
 
 ![](assets/imgs/components/Marina-full.png)
 
-Este proyecto trata sobre como crear un ![ordenador](https://es.wikipedia.org/wiki/Computadora) de 8bits, que cumpla los requisitos de una ![máquina de Turing](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing):
+Este proyecto trata sobre como crear un [ordenador](https://es.wikipedia.org/wiki/Computadora) de 8bits, que cumpla los requisitos de una [máquina de Turing](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing):
 
 * Leer/Escribir caracteres de una memoria
 * Poder moverse por esa memoria
@@ -10,7 +10,7 @@ Este proyecto trata sobre como crear un ![ordenador](https://es.wikipedia.org/wi
 
 Una vez nuestro ordenador cumpla todos estos requisitos, estaremos seguros de que podra ejecutar cualquier algoritmo de computación.
 
-Todo esto inspirado por la serie de videos de ![Ben Eater](https://www.youtube.com/watch?v=HyznrdDSSGM&list=PLowKtXNTBypGqImE405J2565dvjafglHU), y contado por [mí](https://twitter.com/F_de_Fornell).
+Todo esto inspirado por la serie de videos de [Ben Eater](https://www.youtube.com/watch?v=HyznrdDSSGM&list=PLowKtXNTBypGqImE405J2565dvjafglHU), y contado por [mí](https://twitter.com/F_de_Fornell).
 
 ## Problema
 
@@ -26,11 +26,11 @@ Queremos hacer un ordenador así que necesitaremos resolver estas cuestiones:
 
 ### 1º Cuestión:
 
-Para crear el circuito de nuestro ordenador usaremos un programa de simulación de circuitos, en este caso yo he elegido ![logisim-evolution](https://github.com/logisim-evolution/logisim-evolution), pero se puede utilizar otro si lo queréis.
+Para crear el circuito de nuestro ordenador usaremos un programa de simulación de circuitos, en este caso yo he elegido [logisim-evolution](https://github.com/logisim-evolution/logisim-evolution), pero se puede utilizar otro si lo queréis.
 
 ### 2º Cuestión:
 
-A la hora de elegir que forma tendrá el circuito se abren una infinidad de diseños, pero en lo personal prefiero usar uno basado en un BUS. Más concretamente el patrón ![SAP](https://es.wikipedia.org/wiki/Simple-As-Possible_computer).
+A la hora de elegir que forma tendrá el circuito se abren una infinidad de diseños, pero en lo personal prefiero usar uno basado en un BUS. Más concretamente el patrón [SAP](https://es.wikipedia.org/wiki/Simple-As-Possible_computer).
 
 ![](assets/imgs/SAP.png)
 
@@ -209,7 +209,7 @@ Para poder ejecutar un programa lo único que hay que hacer es cargar en la RAM 
 
 #### Manual
 
-Miramos los mnemónicos de la ![tabla de instrucciones](https://docs.google.com/spreadsheets/d/1ntU3Rf7l5LElHSgGCQE4OmPOD4lz0emifyxvnIvVKok/edit#gid=0), realizamos el programa y con la misma tabla, los pasamos a su valor binario:
+Miramos los mnemónicos de la [tabla de instrucciones](https://docs.google.com/spreadsheets/d/1ntU3Rf7l5LElHSgGCQE4OmPOD4lz0emifyxvnIvVKok/edit#gid=0), realizamos el programa y con la misma tabla, los pasamos a su valor binario:
 
 ```
 LDA 15
@@ -246,7 +246,7 @@ Y así con las instrucciones restantes, hasta que necesitemos introducir las var
 
 #### Compilador
 
-Otra vez hacemos el programa usando los mnemónicos de la ![tabla de instrucciones](https://docs.google.com/spreadsheets/d/1ntU3Rf7l5LElHSgGCQE4OmPOD4lz0emifyxvnIvVKok/edit#gid=0) y usando el archivo `compilador.py` ponemos los mnemónicos aquí:
+Otra vez hacemos el programa usando los mnemónicos de la [tabla de instrucciones](https://docs.google.com/spreadsheets/d/1ntU3Rf7l5LElHSgGCQE4OmPOD4lz0emifyxvnIvVKok/edit#gid=0) y usando el archivo `compilador.py` ponemos los mnemónicos aquí:
 
 ![](assets/imgs/compiler/program-list.png)
 
@@ -266,8 +266,8 @@ Independientemente del método, al final hay que entrar en la pestaña Simulate 
 
 ## Agradecimientos y fuentes
 
-* Fuente principal del proyecto, tanto por la parte teórica y práctica: ![Ben Eater](https://twitter.com/ben_eater)
-* Punto de referencia principal a la hora de diseñar los componentes en logisim-evolution: ![Leonardo Berardino](https://github.com/leonicolas/computer-8bits)
-* Como usar las puertas lógicas: ![Karl Rombauts](https://medium.com/@karlrombauts/building-an-8-bit-computer-in-logisim-part-1-building-blocks-a4f1e5ea0d03)
-* Contexto de otro proyecto: ![spel3o](https://www.instructables.com/How-to-Build-an-8-Bit-Computer)
-* Contexto de otro proyecto: ![eddiewastaken](https://github.com/eddiewastaken/logisim-discrete-CPU)
+* Fuente principal del proyecto, tanto por la parte teórica y práctica: [Ben Eater](https://twitter.com/ben_eater)
+* Punto de referencia principal a la hora de diseñar los componentes en logisim-evolution: [Leonardo Berardino](https://github.com/leonicolas/computer-8bits)
+* Como usar las puertas lógicas: [Karl Rombauts](https://medium.com/@karlrombauts/building-an-8-bit-computer-in-logisim-part-1-building-blocks-a4f1e5ea0d03)
+* Contexto de otro proyecto: [spel3o](https://www.instructables.com/How-to-Build-an-8-Bit-Computer)
+* Contexto de otro proyecto: [eddiewastaken](https://github.com/eddiewastaken/logisim-discrete-CPU)
