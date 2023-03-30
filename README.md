@@ -1,16 +1,16 @@
-# MARINA
+# Marina
 
-![](assets/imgs/components/marina-full.png)
+![](assets/imgs/components/Marina-full.png)
 
-Este proyecto trata sobre como crear un ordenador de 8bits, que cumpla los requisitos de una máquina de Turing:
+Este proyecto trata sobre como crear un ![ordenador](https://es.wikipedia.org/wiki/Computadora) de 8bits, que cumpla los requisitos de una ![máquina de Turing](https://es.wikipedia.org/wiki/M%C3%A1quina_de_Turing):
 
 * Leer/Escribir caracteres de una memoria
 * Poder moverse por esa memoria
-* Actuar con base en unos estados definidos
+* Actuar en base a unos estados definidos
 
 Una vez nuestro ordenador cumpla todos estos requisitos, estaremos seguros de que podra ejecutar cualquier algoritmo de computación.
 
-Todo esto inspirado por la serie de videos de Ben Eater y contado por mí.
+Todo esto inspirado por la serie de videos de ![Ben Eater](https://www.youtube.com/watch?v=HyznrdDSSGM&list=PLowKtXNTBypGqImE405J2565dvjafglHU), y contado por [mí](https://twitter.com/F_de_Fornell).
 
 ## Problema
 
@@ -26,11 +26,11 @@ Queremos hacer un ordenador así que necesitaremos resolver estas cuestiones:
 
 ### 1º Cuestión:
 
-Para crear el circuito de nuestro ordenador usaremos un programa de simulación de circuitos, en este caso yo he elegido logisim-evolution, pero se puede utilizar otro si lo queréis.
+Para crear el circuito de nuestro ordenador usaremos un programa de simulación de circuitos, en este caso yo he elegido ![logisim-evolution](https://github.com/logisim-evolution/logisim-evolution), pero se puede utilizar otro si lo queréis.
 
 ### 2º Cuestión:
 
-A la hora de elegir que forma tendrá el circuito se abren una infinidad de diseños, pero en lo personal prefiero usar uno basado en un BUS. Más concretamente el patrón SAP.
+A la hora de elegir que forma tendrá el circuito se abren una infinidad de diseños, pero en lo personal prefiero usar uno basado en un BUS. Más concretamente el patrón ![SAP](https://es.wikipedia.org/wiki/Simple-As-Possible_computer).
 
 ![](assets/imgs/SAP.png)
 
@@ -54,7 +54,7 @@ Y ahora con una tabla más compleja:
 
 Simple ¿no?, pues solo con estas mecánicas tan sencillas se puede ejecutar cualquier algoritmo de computación. Y la verdad, suena a que es mentira o imposible, pero no lo es:
 
-En términos generales, lo que hace la máquina es leer datos de una memoria y actuar con base en ellos siguiendo unas instrucciones predefinidas. ¿No os suena familiar?, es como programar un ordenador, este también manipula una memoria siguiendo unas instrucciones/estados que le hemos dado.
+En términos generales, lo que hace la máquina es leer datos de una memoria y actuar en base a ellos siguiendo unas instrucciones predefinidas. ¿No os suena familiar?, es como programar un ordenador, este también manipula una memoria siguiendo unas instrucciones/estados que le hemos dado.
 
 Ahora, con todo este contexto, podemos decir que:
 
@@ -73,7 +73,7 @@ Manda una señal para sincronizar a todos los componentes del ordenador.
 
 #### `PROGRAM COUNTER`
 
-Es un registro que guarda un número que puede incrementar y decrementar, para moverse por las direcciones de la memoria.
+Es un registro que guarda un número que puede incrementar y decrementar, para moverse por las direcciones de la memoria. Se utiliza para saber el cauce de la ejecución.
 
 ![](assets/imgs/components/PC.png)
 
@@ -161,11 +161,11 @@ Lo que he hecho aquí es cargar en el registro A lo que halla en la dirección d
 
 #### ¿CÓMO?, pues asi:
 
-Cogemos y por cada instrucción que pueda interpretar el ordenador, la rompemos en acciones que pueden hacer los componentes ordenador, que son estas:
+Cogemos y por cada instrucción que pueda interpretar el ordenador, la rompemos en acciones que pueden hacer los componentes del ordenador, que son estas:
 
 HL CE CO JP AI AO EO SU BI BO FI MI RI RO II IO	OI
 
-Estos son los microcódigos con los que nos referimos a acciones como:
+Estos son los microcódigos, con los que nos referimos a acciones como:
 
 * HL: Parar el reloj
 * AI: Meter en el registro A lo que haya en el BUS
@@ -191,7 +191,7 @@ IO volcamos lo que hay en el registro de instrucciones en el BUS, pero este regi
 
 RO sacamos el valor que haya en esa posición de la RAM y lo metemos en el registro A.
 
-Y así con cada instrucción que tenga nuestra máquina. Aquí podéis ver las instrucciones con sus microcódigos que tiene MARINA. Hay también veréis que los microcódigos se dividen también en steps(pasos), porque hay microcódigos que no se pueden ejecutar a la vez o no interesa hacerlo, así que rompemos la ejecución de los microcódigos en 8 pasos.
+Y así con cada instrucción que tenga nuestra máquina. Aquí podéis ver las instrucciones con sus microcódigos que tiene Marina. Hay también veréis que los microcódigos se dividen también en steps(pasos), porque hay microcódigos que no se pueden ejecutar a la vez o no interesa hacerlo, así que rompemos la ejecución de los microcódigos en 8 pasos.
 
 De esto se encarga el decodificador de instrucciones:
 
@@ -203,13 +203,13 @@ Para que el ordenador sepa qué microcódigos ejecutar y cuando, utilizaremos un
 
 Podemos generar la ROM con este archivo `instruc_decoder_rom_generator.py`.
 
-### ¿Cómo usar a MARINA?
+### ¿Cómo usar a Marina?
 
 Para poder ejecutar un programa lo único que hay que hacer es cargar en la RAM las instrucciones, para ello hay dos formas diferentes: la manual o con el compilador.
 
 #### Manual
 
-Miramos los mnemónicos de la tabla de instrucciones, realizamos el programa y con la misma tabla, los pasamos a su valor binario:
+Miramos los mnemónicos de la ![tabla de instrucciones](https://docs.google.com/spreadsheets/d/1ntU3Rf7l5LElHSgGCQE4OmPOD4lz0emifyxvnIvVKok/edit#gid=0), realizamos el programa y con la misma tabla, los pasamos a su valor binario:
 
 ```
 LDA 15
@@ -241,11 +241,12 @@ Y cuando estamos en la dirección 0.
 Y así con las instrucciones restantes, hasta que necesitemos introducir las variables necesarias como la dirección 15 que guarda un 2.
 
 0000 1111, BUS_IN, MI, CLOCK
+
 0000 0010, BUS_IN, RI, CLOCK
 
 #### Compilador
 
-Otra vez hacemos el programa usando los mnemónicos de la tabla de instrucciones y usando el archivo `compilador.py` ponemos los mnemónicos aquí:
+Otra vez hacemos el programa usando los mnemónicos de la ![tabla de instrucciones](https://docs.google.com/spreadsheets/d/1ntU3Rf7l5LElHSgGCQE4OmPOD4lz0emifyxvnIvVKok/edit#gid=0) y usando el archivo `compilador.py` ponemos los mnemónicos aquí:
 
 ![](assets/imgs/compiler/program-list.png)
 
@@ -265,8 +266,8 @@ Independientemente del método, al final hay que entrar en la pestaña Simulate 
 
 ## Agradecimientos y fuentes
 
-* Fuente principal del proyecto, tanto por la parte teórica y práctica: Ben Eater
-* Punto de referencia principal a la hora de diseñar los componentes en logisim-evolution: Leonardo Berardino
-* Como usar las puertas lógicas: Karl Rombauts
-* Contexto de otro proyecto: spel3o
-* Contexto de otro proyecto: eddiewastaken
+* Fuente principal del proyecto, tanto por la parte teórica y práctica: ![Ben Eater](https://twitter.com/ben_eater)
+* Punto de referencia principal a la hora de diseñar los componentes en logisim-evolution: ![Leonardo Berardino](https://github.com/leonicolas/computer-8bits)
+* Como usar las puertas lógicas: ![Karl Rombauts](https://medium.com/@karlrombauts/building-an-8-bit-computer-in-logisim-part-1-building-blocks-a4f1e5ea0d03)
+* Contexto de otro proyecto: ![spel3o](https://www.instructables.com/How-to-Build-an-8-Bit-Computer)
+* Contexto de otro proyecto: ![eddiewastaken](https://github.com/eddiewastaken/logisim-discrete-CPU)

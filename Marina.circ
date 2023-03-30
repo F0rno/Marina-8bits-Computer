@@ -615,16 +615,16 @@
       <a name="font" val="SansSerif bold 13"/>
       <a name="text" val="OUT-REGISTER"/>
     </comp>
-    <comp lib="8" loc="(330,160)" name="Text">
+    <comp lib="8" loc="(334,163)" name="Text">
       <a name="color" val="#0000ff"/>
       <a name="font" val="SansSerif bold 64"/>
       <a name="text" val="MARINA"/>
     </comp>
-    <comp lib="8" loc="(499,273)" name="Text">
+    <comp lib="8" loc="(495,270)" name="Text">
       <a name="color" val="#0000ff"/>
       <a name="text" val="INSTRUC"/>
     </comp>
-    <comp lib="8" loc="(591,274)" name="Text">
+    <comp lib="8" loc="(590,270)" name="Text">
       <a name="color" val="#0000ff"/>
       <a name="text" val="ADDR"/>
     </comp>
