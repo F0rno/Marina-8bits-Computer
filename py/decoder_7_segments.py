@@ -25,9 +25,11 @@ def generate_addr_segments_codes():
     for addr in range(0, 255+1):
         binary_addr = hexFormat(decimal_to_binary(addr))
         string_addr = str(addr).zfill(6)
-        digit_1 = "".join([str(i) for i in INT_TO_7_SEGMENTS[int(string_addr[3])]])[::-1]
-        digit_2 = "".join([str(i) for i in INT_TO_7_SEGMENTS[int(string_addr[4])]])[::-1]
-        digit_3 = "".join([str(i) for i in INT_TO_7_SEGMENTS[int(string_addr[5])]])[::-1]
+        # For each digit of 000 to 255, we take the parts (0 0 0, 2 5 5) 
+        # and converts that into the 7_SEGMENTS code
+        digit_1 = "".join([str(segment_decode) for segment_decode in INT_TO_7_SEGMENTS[int(string_addr[3])]])[::-1]
+        digit_2 = "".join([str(segment_decode) for segment_decode in INT_TO_7_SEGMENTS[int(string_addr[4])]])[::-1]
+        digit_3 = "".join([str(segment_decode) for segment_decode in INT_TO_7_SEGMENTS[int(string_addr[5])]])[::-1]
         segment_hexcodes = hexFormat(f"{digit_3}{digit_2}{digit_1}")
         addr_segments[binary_addr] = segment_hexcodes
     return addr_segments

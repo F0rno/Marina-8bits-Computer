@@ -119,3 +119,7 @@ He cambiado el diseño del circuito principal de Marina, ahora el registro de sa
 Hoy he empezado la documentación de Marina, junto con el compilador. La documentación es bastante exigente  porque estoy tocando mucho la máquina de Turing, pero me esta ayudando a mi propio entendimiento. El compilador no esta siendo muy complicado, pero todabia no lo he acabado así que me callo.
 
 He añadido un marco de cables para el label del nombre y a quedado de locos.
+
+## 29-03-2023 Día 18:
+
+He terminado el compilador, no es muy comodo de usar pero el proyecto se esta alargando demasiado.
